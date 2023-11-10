@@ -80,10 +80,18 @@ namespace WindowsFormsApp1
             dashboard = null;
         }
 
-        private void home_Click(object sender, EventArgs e)
+        private void Home_FormClosed(object sender, FormClosedEventArgs e)
         {
+            formHome = null;
+        }
+        private void Calendar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formCalendar = null;
+        }
 
 
+        private void btnHome_Click(object sender, EventArgs e)
+        {
             if (formHome == null)
             {
                 formHome = new formHome();
@@ -96,12 +104,22 @@ namespace WindowsFormsApp1
             {
                 formHome.Activate();
             }
-
         }
 
-        private void Home_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnCalendario_Click(object sender, EventArgs e)
         {
-            formHome = null;
+            if (formCalendar == null)
+            {
+                formCalendar = new formCalendar();
+                formCalendar.FormClosed += Calendar_FormClosed;
+                formCalendar.MdiParent = this;
+                formCalendar.Dock = DockStyle.Fill;
+                formCalendar.Show();
+            }
+            else
+            {
+                formCalendar.Activate();
+            }
         }
     }
 }

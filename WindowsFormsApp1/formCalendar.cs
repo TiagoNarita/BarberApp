@@ -16,5 +16,21 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void formCalendar_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        /*private void displayDays()
+        { 
+            DateTime now = DateTime.Now;
+
+            DateTime startoffthemonth = new DateTime(1, now.Month, now.Year);
+
+            int days = DateTime.DaysInMonth(now.Month, now.Year);*/
+        
+        
+        
     }
 }
