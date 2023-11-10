@@ -14,28 +14,14 @@ namespace WindowsFormsApp1
     {
         formDashboard dashboard;
         formHome formHome;
+        formCalendar formCalendar;
         
 
         public Form1()
         {
             InitializeComponent();
         }
-        bool menuExpande = true;
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        bool menuExpande = true;    
 
         private void menuTransition_Tick(object sender, EventArgs e)
         {

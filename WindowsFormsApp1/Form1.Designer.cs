@@ -71,7 +71,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 83);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label1
             // 
@@ -130,7 +129,6 @@
             this.panelDashboard.Name = "panelDashboard";
             this.panelDashboard.Size = new System.Drawing.Size(200, 51);
             this.panelDashboard.TabIndex = 2;
-            this.panelDashboard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnDash
             // 
