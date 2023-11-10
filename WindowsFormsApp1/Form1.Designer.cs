@@ -37,7 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.sideBarTransition = new System.Windows.Forms.Timer(this.components);
             this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.home = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             // panelhome
             // 
-            this.panelhome.Controls.Add(this.button1);
+            this.panelhome.Controls.Add(this.home);
             this.panelhome.Location = new System.Drawing.Point(0, 83);
             this.panelhome.Margin = new System.Windows.Forms.Padding(0);
             this.panelhome.Name = "panelhome";
@@ -129,21 +129,22 @@
             this.btnMenu.TabStop = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // button1
+            // home
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::WindowsFormsApp1.Properties.Resources.home__3_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-13, -12);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(213, 79);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "             Home";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.home.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.home.ForeColor = System.Drawing.Color.White;
+            this.home.Image = global::WindowsFormsApp1.Properties.Resources.home__3_;
+            this.home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.home.Location = new System.Drawing.Point(-13, -12);
+            this.home.Name = "home";
+            this.home.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.home.Size = new System.Drawing.Size(213, 79);
+            this.home.TabIndex = 1;
+            this.home.Text = "             Home";
+            this.home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.home.UseVisualStyleBackColor = true;
+            this.home.Click += new System.EventHandler(this.home_Click);
             // 
             // button2
             // 
@@ -205,7 +206,7 @@
         private System.Windows.Forms.FlowLayoutPanel menu;
         private System.Windows.Forms.Panel panelhome;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button home;
         private System.Windows.Forms.Panel panelDashboard;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panelCalendar;

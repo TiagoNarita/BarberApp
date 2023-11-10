@@ -78,6 +78,7 @@ namespace WindowsFormsApp1
                 dashboard = new formDashboard();
                 dashboard.FormClosed += Dashbord_FormClosed;
                 dashboard.MdiParent = this;
+                dashboard.Dock = DockStyle.Fill;
                 dashboard.Show();
             }
             else
@@ -89,6 +90,11 @@ namespace WindowsFormsApp1
         private void Dashbord_FormClosed(object sender, FormClosedEventArgs e)
         {
             dashboard = null;
+        }
+
+        private void home_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

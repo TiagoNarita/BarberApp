@@ -16,5 +16,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void formDashboard_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false;
+        }
     }
 }
