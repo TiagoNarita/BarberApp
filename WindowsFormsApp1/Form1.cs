@@ -14,7 +14,6 @@ namespace WindowsFormsApp1
     {
         formDashboard dashboard;
         testeForm testeForm;
-        String teste;
         public Form1()
         {
             InitializeComponent();
