@@ -13,7 +13,9 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         formDashboard dashboard;
-        testeForm testeForm;
+        formHome formHome;
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -95,6 +97,25 @@ namespace WindowsFormsApp1
         private void home_Click(object sender, EventArgs e)
         {
 
+
+            if (formHome == null)
+            {
+                formHome = new formHome();
+                formHome.FormClosed += Home_FormClosed;
+                formHome.MdiParent = this;
+                formHome.Dock = DockStyle.Fill;
+                formHome.Show();
+            }
+            else
+            {
+                formHome.Activate();
+            }
+
+        }
+
+        private void Home_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formHome = null;
         }
     }
 }

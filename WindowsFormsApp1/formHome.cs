@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class testeForm : Form
+    public partial class formHome : Form
     {
-        public testeForm()
+        public formHome()
         {
             InitializeComponent();
+        }
+
+        private void formHome_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false;
         }
     }
 }
