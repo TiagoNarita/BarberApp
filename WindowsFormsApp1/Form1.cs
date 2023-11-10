@@ -14,8 +14,6 @@ namespace WindowsFormsApp1
     {
         formDashboard dashboard;
         testeForm testeForm;
-
-        //apenas o teste baby
         public Form1()
         {
             InitializeComponent();
