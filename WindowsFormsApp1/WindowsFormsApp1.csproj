@@ -71,6 +71,18 @@
     <Compile Include="formHome.Designer.cs">
       <DependentUpon>formHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="formCreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCreateAccount.Designer.cs">
+      <DependentUpon>formCreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="MdiPropertis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +97,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formHome.resx">
       <DependentUpon>formHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCreateAccount.resx">
+      <DependentUpon>formCreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
