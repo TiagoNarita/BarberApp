@@ -82,8 +82,6 @@ namespace WindowsFormsApp1
 
         private void home_Click(object sender, EventArgs e)
         {
-
-
             if (formHome == null)
             {
                 formHome = new formHome();
@@ -96,12 +94,27 @@ namespace WindowsFormsApp1
             {
                 formHome.Activate();
             }
-
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
         {
             formHome = null;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (formCalendar == null)
+            {
+                formCalendar = new formCalendar();
+                formCalendar.FormClosed += Home_FormClosed;
+                formCalendar.MdiParent = this;
+                formCalendar.Dock = DockStyle.Fill;
+                formCalendar.Show();
+            }
+            else
+            {
+                formCalendar.Activate();
+            }
         }
     }
 }
