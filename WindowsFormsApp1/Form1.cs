@@ -20,8 +20,14 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            mdiProp();
         }
         bool menuExpande = true;    
+        private void mdiProp()
+        {
+            this.SetBevel(false);
+            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.FromArgb(232, 234, 237);
+        }
 
         private void menuTransition_Tick(object sender, EventArgs e)
         {

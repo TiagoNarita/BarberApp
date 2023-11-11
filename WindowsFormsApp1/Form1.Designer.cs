@@ -188,7 +188,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IsMdiContainer = true;
             this.Name = "Form1";
-            this.Text = "Form1";
             this.menu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

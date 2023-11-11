@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 
         [DllImport("user32.dll")]
 
-        private static extern int SetWindowLong(IntPtr hWnd, int dwNewLong);
+        private static extern int SetWindowLong(IntPtr hWnd, int nIdex,int dwNewLong);
         [DllImport("user32.dll")]
         private static extern int SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int x, int y, int cx, int cy, uint uFlags);
 
@@ -37,12 +37,18 @@ namespace WindowsFormsApp1
                     int windowLong = GetWindowLong(c.Handle, GWL_EXSTYLE);
                     if (show) 
                     {
-                    //    windowLong | = WS_EX_CLIENTEDGE;
+                        windowLong |= WS_EX_CLIENTEDGE;
                     }
                     else
                     {
-                     //   windowLong
+                        windowLong &= WS_EX_CLIENTEDGE;
                     }
+                    SetWindowLong(c.Handle, GWL_EXSTYLE, windowLong);
+                    SetWindowPos(client.Handle, IntPtr.Zero, 0, 0, 0, 0,
+                       SWO_NOACTIVATE | SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | 
+                       SWO_NOOWNERZORDER | SWP_FRAMECHANGED
+                        );
+                    return true;
                 }
             }
             return false;
