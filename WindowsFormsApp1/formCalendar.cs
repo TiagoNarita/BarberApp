@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
             lbData.Text = nomeMes + " " + year;
 
             //pegando o primeiro dia do mes
-            DateTime startofMonth = new DateTime(year,month, 1);
+            DateTime startofMonth = new DateTime(year, month, 1);
 
 
             //contagem dos dias do mes
@@ -51,13 +51,13 @@ namespace WindowsFormsApp1
             int dayoftheweek = Convert.ToInt32(startofMonth.DayOfWeek.ToString("d"));
 
             //Criando controle de usuário
-            for (int i = 0; i < dayoftheweek; i++) 
+            for (int i = 0; i < dayoftheweek; i++)
             {
                 UserControl1 ucblank = new UserControl1();
                 dayContainer.Controls.Add(ucblank);
             }
 
-            for(int i = 1;i < days; i++)
+            for (int i = 1; i < days; i++)
             {
                 UserControlDays ucDays = new UserControlDays();
                 ucDays.days(i);
@@ -70,6 +70,7 @@ namespace WindowsFormsApp1
             dayContainer.Controls.Clear();
 
             month--;
+            updateCalendar();
 
             string nomeMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             lbData.Text = nomeMes + " " + year;
@@ -103,6 +104,7 @@ namespace WindowsFormsApp1
             dayContainer.Controls.Clear();
 
             month++;
+            updateCalendar();
 
             string nomeMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             lbData.Text = nomeMes + " " + year;
@@ -127,6 +129,22 @@ namespace WindowsFormsApp1
                 UserControlDays ucDays = new UserControlDays();
                 ucDays.days(i);
                 dayContainer.Controls.Add(ucDays);
+            }
+        }
+        private void updateCalendar()
+        {
+            dayContainer.Controls.Clear();
+
+            // Verifica se a transição de mês requer uma atualização no ano
+            if (month == 0)
+            {
+                month = 12;
+                year--;
+            }
+            else if (month == 13)
+            {
+                month = 1;
+                year++;
             }
         }
     }
