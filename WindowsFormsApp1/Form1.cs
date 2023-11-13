@@ -20,14 +20,8 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-            mdiProp();
         }
         bool menuExpande = true;    
-        private void mdiProp()
-        {
-            this.SetBevel(false);
-            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.FromArgb(232, 234, 237);
-        }
 
         private void menuTransition_Tick(object sender, EventArgs e)
         {
@@ -90,20 +84,41 @@ namespace WindowsFormsApp1
         {
             formHome = null;
         }
+        private void Calendar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formCalendar = null;
+        }
+
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (formHome == null)
             {
                 formHome = new formHome();
-                formHome.FormClosed += Dashbord_FormClosed;
+                formHome.FormClosed += Home_FormClosed;
                 formHome.MdiParent = this;
                 formHome.Dock = DockStyle.Fill;
                 formHome.Show();
             }
             else
             {
-                dashboard.Activate();
+                formHome.Activate();
+            }
+        }
+
+        private void btnCalendario_Click(object sender, EventArgs e)
+        {
+            if (formCalendar == null)
+            {
+                formCalendar = new formCalendar();
+                formCalendar.FormClosed += Calendar_FormClosed;
+                formCalendar.MdiParent = this;
+                formCalendar.Dock = DockStyle.Fill;
+                formCalendar.Show();
+            }
+            else
+            {
+                formCalendar.Activate();
             }
         }
     }
