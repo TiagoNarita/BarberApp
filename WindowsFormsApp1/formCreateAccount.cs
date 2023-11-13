@@ -34,10 +34,14 @@ namespace WindowsFormsApp1
             else if (txtPassword.Text == txtConfPassword.Text)
             {
                 con.Open();
-                string register = "INSERT INTO users VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "')";
+                string register = "INSERT INTO users (username, passwords) VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "')";
                 cmd = new MySqlCommand(register, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
+
+                txtPassword.Text = "";
+                txtConfPassword.Text = "";
+                txtUsername.Text = "";
 
                 MessageBox.Show("Your Account has been Successfully created", "Registration Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -63,6 +67,20 @@ namespace WindowsFormsApp1
                 txtConfPassword.PasswordChar = '*';
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
+            txtConfPassword.Text = "";
+            txtUsername.Text = "";
+            txtUsername.Focus();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            new frmLoguin().Show();
+            Close();
         }
     }
 }
