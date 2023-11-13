@@ -59,6 +59,12 @@
     <Compile Include="formCalendar.Designer.cs">
       <DependentUpon>formCalendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="formCreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCreateAccount.Designer.cs">
+      <DependentUpon>formCreateAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="formDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formCalendar.resx">
       <DependentUpon>formCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCreateAccount.resx">
+      <DependentUpon>formCreateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formDashboard.resx">
       <DependentUpon>formDashboard.cs</DependentUpon>
