@@ -24,26 +24,45 @@ namespace WindowsFormsApp1
             MySqlCommand cmd = new MySqlCommand();
             MySqlDataAdapter da = new MySqlDataAdapter();
 
-            private void button1_Click(object sender, EventArgs e)
-            {
-                if (txtUsername.Text == "" && txtPassword.Text == "" && txtConfPassword.Text == "")
-                {
-                    MessageBox.Show("Usarname and Password fields are empty", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (txtPassword.Text == txtPassword.Text)
-                {
-                    con.Open();
-                    string register = "INSERT INTO users VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "')";
-                    cmd = new MySqlCommand(register, con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
 
-                    MessageBox.Show("Your Account has been Successfully created", "Registration Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Passwords does not match, Please Re-enter", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "" && txtPassword.Text == "" && txtConfPassword.Text == "")
+            {
+                MessageBox.Show("Usarname and Password fields are empty", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (txtPassword.Text == txtConfPassword.Text)
+            {
+                con.Open();
+                string register = "INSERT INTO users VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "')";
+                cmd = new MySqlCommand(register, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                MessageBox.Show("Your Account has been Successfully created", "Registration Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Passwords does not match, Please Re-enter", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Text = "";
+                txtConfPassword.Text = "";
+                txtPassword.Focus();
+            }
+        }
+
+        private void checkBxShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBxShowPass.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+                txtConfPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+                txtConfPassword.PasswordChar = '*';
+
+            }
+        }
     }
 }

@@ -88,6 +88,7 @@
             this.button1.TabIndex = 20;
             this.button1.Text = "REGISTER";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // checkBxShowPass
             // 
@@ -100,6 +101,7 @@
             this.checkBxShowPass.TabIndex = 19;
             this.checkBxShowPass.Text = "Show Password";
             this.checkBxShowPass.UseVisualStyleBackColor = true;
+            this.checkBxShowPass.CheckedChanged += new System.EventHandler(this.checkBxShowPass_CheckedChanged);
             // 
             // txtConfPassword
             // 
@@ -109,6 +111,7 @@
             this.txtConfPassword.Location = new System.Drawing.Point(35, 273);
             this.txtConfPassword.Multiline = true;
             this.txtConfPassword.Name = "txtConfPassword";
+            this.txtConfPassword.PasswordChar = '*';
             this.txtConfPassword.Size = new System.Drawing.Size(216, 28);
             this.txtConfPassword.TabIndex = 18;
             // 
@@ -129,6 +132,7 @@
             this.txtPassword.Location = new System.Drawing.Point(35, 203);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(216, 28);
             this.txtPassword.TabIndex = 16;
             // 
@@ -193,9 +197,9 @@
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCreateAccount";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formCreateAccount";
             this.ResumeLayout(false);
             this.PerformLayout();
