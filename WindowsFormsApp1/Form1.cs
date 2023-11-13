@@ -106,21 +106,5 @@ namespace WindowsFormsApp1
         {
             formHome = null;
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (formCalendar == null)
-            {
-                formCalendar = new formCalendar();
-                formCalendar.FormClosed += Home_FormClosed;
-                formCalendar.MdiParent = this;
-                formCalendar.Dock = DockStyle.Fill;
-                formCalendar.Show();
-            }
-            else
-            {
-                formCalendar.Activate();
-            }
-        }
     }
 }

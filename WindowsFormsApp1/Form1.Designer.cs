@@ -38,7 +38,7 @@
             this.panelDashboard = new System.Windows.Forms.Panel();
             this.btnDash = new System.Windows.Forms.Button();
             this.panelCalendar = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCalendario = new System.Windows.Forms.Button();
             this.sideBarTransition = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -149,29 +149,28 @@
             // 
             // panelCalendar
             // 
-            this.panelCalendar.Controls.Add(this.button3);
+            this.panelCalendar.Controls.Add(this.btnCalendario);
             this.panelCalendar.Location = new System.Drawing.Point(0, 192);
             this.panelCalendar.Margin = new System.Windows.Forms.Padding(0);
             this.panelCalendar.Name = "panelCalendar";
             this.panelCalendar.Size = new System.Drawing.Size(200, 54);
             this.panelCalendar.TabIndex = 3;
             // 
-            // button3
+            // btnCalendario
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::WindowsFormsApp1.Properties.Resources.calendar;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(-13, -10);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(213, 79);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "             Calendar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnCalendario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalendario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalendario.ForeColor = System.Drawing.Color.White;
+            this.btnCalendario.Image = global::WindowsFormsApp1.Properties.Resources.calendar;
+            this.btnCalendario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalendario.Location = new System.Drawing.Point(-13, -10);
+            this.btnCalendario.Name = "btnCalendario";
+            this.btnCalendario.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnCalendario.Size = new System.Drawing.Size(213, 79);
+            this.btnCalendario.TabIndex = 4;
+            this.btnCalendario.Text = "             Calendar";
+            this.btnCalendario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalendario.UseVisualStyleBackColor = true;
             // 
             // sideBarTransition
             // 
@@ -208,7 +207,7 @@
         private System.Windows.Forms.Panel panelDashboard;
         private System.Windows.Forms.Button btnDash;
         private System.Windows.Forms.Panel panelCalendar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCalendario;
         private System.Windows.Forms.PictureBox btnMenu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sideBarTransition;
