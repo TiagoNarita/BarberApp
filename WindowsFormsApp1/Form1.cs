@@ -86,25 +86,25 @@ namespace WindowsFormsApp1
             dashboard = null;
         }
 
-        private void home_Click(object sender, EventArgs e)
+        private void Home_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formHome = null;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
         {
             if (formHome == null)
             {
                 formHome = new formHome();
-                formHome.FormClosed += Home_FormClosed;
+                formHome.FormClosed += Dashbord_FormClosed;
                 formHome.MdiParent = this;
                 formHome.Dock = DockStyle.Fill;
                 formHome.Show();
             }
             else
             {
-                formHome.Activate();
+                dashboard.Activate();
             }
-        }
-
-        private void Home_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formHome = null;
         }
     }
 }

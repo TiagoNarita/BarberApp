@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelhome = new System.Windows.Forms.Panel();
-            this.home = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.panelDashboard = new System.Windows.Forms.Panel();
             this.btnDash = new System.Windows.Forms.Button();
             this.panelCalendar = new System.Windows.Forms.Panel();
@@ -97,29 +97,29 @@
             // 
             // panelhome
             // 
-            this.panelhome.Controls.Add(this.home);
+            this.panelhome.Controls.Add(this.btnHome);
             this.panelhome.Location = new System.Drawing.Point(0, 83);
             this.panelhome.Margin = new System.Windows.Forms.Padding(0);
             this.panelhome.Name = "panelhome";
             this.panelhome.Size = new System.Drawing.Size(200, 58);
             this.panelhome.TabIndex = 0;
             // 
-            // home
+            // btnHome
             // 
-            this.home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.home.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.home.ForeColor = System.Drawing.Color.White;
-            this.home.Image = global::WindowsFormsApp1.Properties.Resources.home__3_;
-            this.home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.home.Location = new System.Drawing.Point(-13, -12);
-            this.home.Name = "home";
-            this.home.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.home.Size = new System.Drawing.Size(213, 79);
-            this.home.TabIndex = 1;
-            this.home.Text = "             Home";
-            this.home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.home.UseVisualStyleBackColor = true;
-            this.home.Click += new System.EventHandler(this.home_Click);
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Image = global::WindowsFormsApp1.Properties.Resources.home__3_;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(-13, -12);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(213, 79);
+            this.btnHome.TabIndex = 1;
+            this.btnHome.Text = "             Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panelDashboard
             // 
@@ -203,7 +203,7 @@
         private System.Windows.Forms.FlowLayoutPanel menu;
         private System.Windows.Forms.Panel panelhome;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button home;
+        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panelDashboard;
         private System.Windows.Forms.Button btnDash;
         private System.Windows.Forms.Panel panelCalendar;
