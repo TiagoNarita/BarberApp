@@ -38,6 +38,8 @@ namespace WindowsFormsApp1
                 con.Open();
                 string query = "INSERT INTO users (username, passwords) VALUES (@username, @password)";
 
+
+              
                 cmd = new MySqlCommand(query, con);
 
                 cmd.Parameters.AddWithValue("@username", txtUsername.Text);
@@ -87,7 +89,7 @@ namespace WindowsFormsApp1
         private void btnLogin_Click(object sender, EventArgs e)
         {
             new frmLoguin().Show();
-            Close();
+            this.Hide();
         }
     }
 }
