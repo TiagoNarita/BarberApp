@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace WindowsFormsApp1
@@ -34,8 +36,13 @@ namespace WindowsFormsApp1
             else if (txtPassword.Text == txtConfPassword.Text)
             {
                 con.Open();
-                string register = "INSERT INTO users (username, passwords) VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "')";
-                cmd = new MySqlCommand(register, con);
+                string query = "INSERT INTO users (username, passwords) VALUES (@username, @password)";
+
+                cmd = new MySqlCommand(query, con);
+
+                cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+
                 cmd.ExecuteNonQuery();
                 con.Close();
 
