@@ -88,9 +88,8 @@ namespace WindowsFormsApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmLoguin frmLoguin = new frmLoguin();
-            frmLoguin.ShowDialog();
-            this.Close();
+            new frmLoguin().Show();
+            this.Hide();
         }
     }
 }

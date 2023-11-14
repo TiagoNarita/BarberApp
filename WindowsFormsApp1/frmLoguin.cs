@@ -36,9 +36,8 @@ namespace WindowsFormsApp1
 
             if(dr.Read() == true)
             {
-                Form1 form1 = new Form1();
-                form1.ShowDialog();
-                this.Close();
+                new Form1().Show();
+                this.Hide();
 
             }
             else
@@ -73,9 +72,8 @@ namespace WindowsFormsApp1
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            frmCreateAccount frm = new frmCreateAccount();
-            frm.ShowDialog();
-            this.Close();
+            new frmCreateAccount().Show();
+            this.Hide();
         }
     }
 }
