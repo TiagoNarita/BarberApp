@@ -22,5 +22,60 @@ namespace WindowsFormsApp1
         MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda");
         MySqlCommand cmd = new MySqlCommand();
         MySqlDataAdapter da = new MySqlDataAdapter();
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            string login = "SELECT * FROM users WHERE username = @username and passwords = @passwords";
+            cmd = new MySqlCommand(login, con);
+
+            cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+            cmd.Parameters.AddWithValue("@passwords", txtPassword.Text);
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if(dr.Read() == true)
+            {
+                Form1 form1 = new Form1();
+                form1.ShowDialog();
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password, Please Try again", "Login Failed", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txtPassword.Text = "";
+                txtUsername.Text = "";
+                txtUsername.Focus();
+                con.Close();
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
+            txtUsername.Text = "";
+            txtUsername.Focus();
+        }
+
+        private void checkBxShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBxShowPass.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+                
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            frmCreateAccount frm = new frmCreateAccount();
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }
