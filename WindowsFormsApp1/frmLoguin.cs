@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp1
 {
@@ -16,5 +18,9 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda");
+        MySqlCommand cmd = new MySqlCommand();
+        MySqlDataAdapter da = new MySqlDataAdapter();
     }
 }
