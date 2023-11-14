@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
             MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda");
             MySqlCommand cmd = new MySqlCommand();
             MySqlDataAdapter da = new MySqlDataAdapter();
+        String confirmandoTeoria;
 
 
         private void button1_Click_1(object sender, EventArgs e)
