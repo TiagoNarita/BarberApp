@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//teste3a
-//teste2
+
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
@@ -17,8 +16,6 @@ namespace WindowsFormsApp1
         formDashboard dashboard;
         formHome formHome;
         formCalendar formCalendar;
-        //teste
-        
 
         public Form1()
         {
