@@ -34,7 +34,7 @@
             // lbDays
             // 
             this.lbDays.AutoSize = true;
-            this.lbDays.Location = new System.Drawing.Point(28, 24);
+            this.lbDays.Location = new System.Drawing.Point(3, 0);
             this.lbDays.Name = "lbDays";
             this.lbDays.Size = new System.Drawing.Size(21, 16);
             this.lbDays.TabIndex = 0;
@@ -49,6 +49,7 @@
             this.Name = "UserControlDays";
             this.Size = new System.Drawing.Size(104, 59);
             this.Load += new System.EventHandler(this.UserControlDays_Load);
+            this.Click += new System.EventHandler(this.UserControlDays_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

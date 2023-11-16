@@ -14,6 +14,8 @@ namespace WindowsFormsApp1
     public partial class formCalendar : Form
     {
         int year, month;
+
+        public static int static_month, static_year;
         public formCalendar()
         {
             InitializeComponent();
@@ -41,6 +43,10 @@ namespace WindowsFormsApp1
             string nomeMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             lbData.Text = nomeMes + " " + year;
 
+            static_month = month;
+            static_year = year; 
+            
+
             //pegando o primeiro dia do mes
             DateTime startofMonth = new DateTime(year, month, 1);
 
@@ -57,19 +63,23 @@ namespace WindowsFormsApp1
                 dayContainer.Controls.Add(ucblank);
             }
 
-            for (int i = 1; i < days; i++)
+            for (int i = 1; i <= days; i++)
             {
                 UserControlDays ucDays = new UserControlDays();
                 ucDays.days(i);
                 dayContainer.Controls.Add(ucDays);
             }
+
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
             dayContainer.Controls.Clear();
 
-            month--;
+            month--; 
+            static_month = month;
+            static_year = year;
+
             updateCalendar();
 
             string nomeMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
@@ -90,12 +100,13 @@ namespace WindowsFormsApp1
                 dayContainer.Controls.Add(ucblank);
             }
 
-            for (int i = 1; i < days; i++)
+            for (int i = 1; i <= days; i++)
             {
                 UserControlDays ucDays = new UserControlDays();
                 ucDays.days(i);
                 dayContainer.Controls.Add(ucDays);
             }
+
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
@@ -104,6 +115,8 @@ namespace WindowsFormsApp1
             dayContainer.Controls.Clear();
 
             month++;
+            static_month = month;
+            static_year = year;
             updateCalendar();
 
             string nomeMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
@@ -124,12 +137,13 @@ namespace WindowsFormsApp1
                 dayContainer.Controls.Add(ucblank);
             }
 
-            for (int i = 1; i < days; i++)
+            for (int i = 1; i <= days; i++)
             {
                 UserControlDays ucDays = new UserControlDays();
                 ucDays.days(i);
                 dayContainer.Controls.Add(ucDays);
             }
+
         }
         private void updateCalendar()
         {
@@ -146,6 +160,11 @@ namespace WindowsFormsApp1
                 month = 1;
                 year++;
             }
+
+            // Corrige o ajuste do mês antes de prosseguir
+            static_month = month;
+            static_year = year;
         }
+
     }
 }
