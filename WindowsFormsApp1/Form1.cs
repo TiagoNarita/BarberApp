@@ -123,5 +123,10 @@ namespace WindowsFormsApp1
                 formCalendar.Activate();
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

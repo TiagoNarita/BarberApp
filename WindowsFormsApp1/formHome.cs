@@ -21,5 +21,23 @@ namespace WindowsFormsApp1
         {
             this.ControlBox = false;
         }
+
+        private void btnCadastrarCliente_Click(object sender, EventArgs e)
+        {
+            FrmCadastro frmCadastro = new FrmCadastro();
+            frmCadastro.ShowDialog();
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            FrmAtualizar frmAtualizar = new FrmAtualizar();
+            frmAtualizar.ShowDialog();
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            FrmExcluir frmExcluir = new FrmExcluir();
+            frmExcluir.ShowDialog();
+        }
     }
 }

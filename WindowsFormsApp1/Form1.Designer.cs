@@ -59,7 +59,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Margin = new System.Windows.Forms.Padding(0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(240, 610);
+            this.menu.Size = new System.Drawing.Size(240, 573);
             this.menu.TabIndex = 0;
             // 
             // panel2
@@ -89,7 +89,7 @@
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = global::WindowsFormsApp1.Properties.Resources.menu;
             this.btnMenu.Location = new System.Drawing.Point(29, 33);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(35, 36);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,7 +114,7 @@
             this.btnHome.Image = global::WindowsFormsApp1.Properties.Resources.home__3_;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(-17, -15);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnHome.Size = new System.Drawing.Size(284, 97);
@@ -141,7 +141,7 @@
             this.btnDash.Image = global::WindowsFormsApp1.Properties.Resources.dashboard;
             this.btnDash.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDash.Location = new System.Drawing.Point(-17, -14);
-            this.btnDash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDash.Margin = new System.Windows.Forms.Padding(4);
             this.btnDash.Name = "btnDash";
             this.btnDash.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnDash.Size = new System.Drawing.Size(284, 90);
@@ -168,7 +168,7 @@
             this.btnCalendario.Image = global::WindowsFormsApp1.Properties.Resources.calendar;
             this.btnCalendario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalendario.Location = new System.Drawing.Point(-17, -12);
-            this.btnCalendario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCalendario.Margin = new System.Windows.Forms.Padding(4);
             this.btnCalendario.Name = "btnCalendario";
             this.btnCalendario.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnCalendario.Size = new System.Drawing.Size(284, 97);
@@ -188,13 +188,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1084, 610);
+            this.ClientSize = new System.Drawing.Size(1084, 573);
             this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

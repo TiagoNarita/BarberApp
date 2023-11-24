@@ -99,6 +99,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Ferramentas.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +137,24 @@
     <Compile Include="formHome.Designer.cs">
       <DependentUpon>formHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAtualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAtualizar.Designer.cs">
+      <DependentUpon>FrmAtualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastro.Designer.cs">
+      <DependentUpon>FrmCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExcluir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExcluir.Designer.cs">
+      <DependentUpon>FrmExcluir.cs</DependentUpon>
+    </Compile>
     <Compile Include="MdiPropertis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,6 +187,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formHome.resx">
       <DependentUpon>formHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAtualizar.resx">
+      <DependentUpon>FrmAtualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastro.resx">
+      <DependentUpon>FrmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExcluir.resx">
+      <DependentUpon>FrmExcluir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
