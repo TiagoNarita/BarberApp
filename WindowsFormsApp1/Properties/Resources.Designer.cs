@@ -123,6 +123,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap home_icon_silhouette {
+            get {
+                object obj = ResourceManager.GetObject("home-icon-silhouette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
@@ -136,6 +146,46 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap Post_Instagram_Barbearia_Corte_de_Cabelo {
             get {
                 object obj = ResourceManager.GetObject("Post Instagram Barbearia Corte de Cabelo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Post_Instagram_Barbearia_Corte_de_Cabelo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Post Instagram Barbearia Corte de Cabelo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verify {
+            get {
+                object obj = ResourceManager.GetObject("verify", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verify__1_ {
+            get {
+                object obj = ResourceManager.GetObject("verify (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verify__2_ {
+            get {
+                object obj = ResourceManager.GetObject("verify (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

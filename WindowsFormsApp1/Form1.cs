@@ -19,14 +19,15 @@ namespace WindowsFormsApp1
         FrmCadastro FrmCadastro;
         //teste
 
-
-        public Form1()
+        ArmazenaInfo armazenaInfo;
+        public Form1(ArmazenaInfo armazenaInfo)
         {
             InitializeComponent();
 
             if (formHome == null)
             {
-                formHome = new formHome();
+                this.armazenaInfo = armazenaInfo;
+                formHome = new formHome(armazenaInfo);
                 formHome.FormClosed += Home_FormClosed;
                 formHome.MdiParent = this;
                 formHome.Dock = DockStyle.Fill;
@@ -110,7 +111,7 @@ namespace WindowsFormsApp1
         {
             if (formHome == null)
             {
-                formHome = new formHome();
+                formHome = new formHome(armazenaInfo);
                 formHome.FormClosed += Home_FormClosed;
                 formHome.MdiParent = this;
                 formHome.Dock = DockStyle.Fill;

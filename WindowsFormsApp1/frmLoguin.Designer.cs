@@ -47,9 +47,9 @@
             this.btnCreateAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.btnCreateAccount.Location = new System.Drawing.Point(88, 393);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(120, 17);
+            this.btnCreateAccount.Size = new System.Drawing.Size(109, 17);
             this.btnCreateAccount.TabIndex = 33;
-            this.btnCreateAccount.Text = "Create an Account";
+            this.btnCreateAccount.Text = "Criar Uma Conta";
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
             // label5
@@ -57,9 +57,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(68, 366);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 17);
+            this.label5.Size = new System.Drawing.Size(135, 17);
             this.label5.TabIndex = 32;
-            this.label5.Text = "Dont Have an Account";
+            this.label5.Text = "Não Tem Uma Conta";
             // 
             // btnClear
             // 
@@ -71,7 +71,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(216, 35);
             this.btnClear.TabIndex = 31;
-            this.btnClear.Text = "CLEAR";
+            this.btnClear.Text = "LIMPAR";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -97,9 +97,9 @@
             this.checkBxShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBxShowPass.Location = new System.Drawing.Point(134, 228);
             this.checkBxShowPass.Name = "checkBxShowPass";
-            this.checkBxShowPass.Size = new System.Drawing.Size(119, 21);
+            this.checkBxShowPass.Size = new System.Drawing.Size(113, 21);
             this.checkBxShowPass.TabIndex = 29;
-            this.checkBxShowPass.Text = "Show Password";
+            this.checkBxShowPass.Text = "Mostrar Senha";
             this.checkBxShowPass.UseVisualStyleBackColor = true;
             this.checkBxShowPass.CheckedChanged += new System.EventHandler(this.checkBxShowPass_CheckedChanged);
             // 
@@ -120,9 +120,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(34, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.Size = new System.Drawing.Size(45, 17);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Password";
+            this.label3.Text = "Senha";
             // 
             // txtUsername
             // 
@@ -140,9 +140,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(34, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Username";
+            this.label2.Text = "Usuário";
             // 
             // label1
             // 
