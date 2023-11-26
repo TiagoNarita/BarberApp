@@ -16,12 +16,26 @@ namespace WindowsFormsApp1
         formDashboard dashboard;
         formHome formHome;
         formCalendar formCalendar;
+        FrmCadastro FrmCadastro;
         //teste
-        
+
 
         public Form1()
         {
             InitializeComponent();
+
+            if (formHome == null)
+            {
+                formHome = new formHome();
+                formHome.FormClosed += Home_FormClosed;
+                formHome.MdiParent = this;
+                formHome.Dock = DockStyle.Fill;
+                formHome.Show();
+            }
+            else
+            {
+                formHome.Activate();
+            }
         }
         bool menuExpande = true;    
 
@@ -121,6 +135,22 @@ namespace WindowsFormsApp1
             else
             {
                 formCalendar.Activate();
+            }
+        }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            if (FrmCadastro == null)
+            {
+                FrmCadastro = new FrmCadastro();
+                FrmCadastro.FormClosed += Home_FormClosed;
+                FrmCadastro.MdiParent = this;
+                FrmCadastro.Dock = DockStyle.Fill;
+                FrmCadastro.Show();
+            }
+            else
+            {
+                FrmCadastro.Activate();
             }
         }
     }
