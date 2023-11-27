@@ -40,12 +40,15 @@
             this.panelCalendar = new System.Windows.Forms.Panel();
             this.btnCalendario = new System.Windows.Forms.Button();
             this.sideBarTransition = new System.Windows.Forms.Timer(this.components);
+            this.btnCadastro = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.panelhome.SuspendLayout();
             this.panelDashboard.SuspendLayout();
             this.panelCalendar.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -55,11 +58,12 @@
             this.menu.Controls.Add(this.panelhome);
             this.menu.Controls.Add(this.panelDashboard);
             this.menu.Controls.Add(this.panelCalendar);
+            this.menu.Controls.Add(this.panel1);
             this.menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Margin = new System.Windows.Forms.Padding(0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(240, 573);
+            this.menu.Size = new System.Drawing.Size(180, 496);
             this.menu.TabIndex = 0;
             // 
             // panel2
@@ -69,7 +73,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 102);
+            this.panel2.Size = new System.Drawing.Size(200, 83);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -77,10 +81,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(101, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(76, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 28);
+            this.label1.Size = new System.Drawing.Size(50, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -88,10 +91,9 @@
             // 
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = global::WindowsFormsApp1.Properties.Resources.menu;
-            this.btnMenu.Location = new System.Drawing.Point(29, 33);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenu.Location = new System.Drawing.Point(22, 27);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(35, 36);
+            this.btnMenu.Size = new System.Drawing.Size(26, 29);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
@@ -100,10 +102,10 @@
             // panelhome
             // 
             this.panelhome.Controls.Add(this.btnHome);
-            this.panelhome.Location = new System.Drawing.Point(0, 102);
+            this.panelhome.Location = new System.Drawing.Point(0, 83);
             this.panelhome.Margin = new System.Windows.Forms.Padding(0);
             this.panelhome.Name = "panelhome";
-            this.panelhome.Size = new System.Drawing.Size(267, 71);
+            this.panelhome.Size = new System.Drawing.Size(200, 58);
             this.panelhome.TabIndex = 0;
             // 
             // btnHome
@@ -113,11 +115,10 @@
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = global::WindowsFormsApp1.Properties.Resources.home__3_;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(-17, -15);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHome.Location = new System.Drawing.Point(-13, -9);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(284, 97);
+            this.btnHome.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(213, 79);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "             Home";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,10 +128,10 @@
             // panelDashboard
             // 
             this.panelDashboard.Controls.Add(this.btnDash);
-            this.panelDashboard.Location = new System.Drawing.Point(0, 173);
+            this.panelDashboard.Location = new System.Drawing.Point(0, 141);
             this.panelDashboard.Margin = new System.Windows.Forms.Padding(0);
             this.panelDashboard.Name = "panelDashboard";
-            this.panelDashboard.Size = new System.Drawing.Size(267, 63);
+            this.panelDashboard.Size = new System.Drawing.Size(200, 51);
             this.panelDashboard.TabIndex = 2;
             // 
             // btnDash
@@ -140,11 +141,10 @@
             this.btnDash.ForeColor = System.Drawing.Color.White;
             this.btnDash.Image = global::WindowsFormsApp1.Properties.Resources.dashboard;
             this.btnDash.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDash.Location = new System.Drawing.Point(-17, -14);
-            this.btnDash.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDash.Location = new System.Drawing.Point(-13, -11);
             this.btnDash.Name = "btnDash";
-            this.btnDash.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnDash.Size = new System.Drawing.Size(284, 90);
+            this.btnDash.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnDash.Size = new System.Drawing.Size(213, 73);
             this.btnDash.TabIndex = 3;
             this.btnDash.Text = "             Dashboard";
             this.btnDash.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,10 +154,10 @@
             // panelCalendar
             // 
             this.panelCalendar.Controls.Add(this.btnCalendario);
-            this.panelCalendar.Location = new System.Drawing.Point(0, 236);
+            this.panelCalendar.Location = new System.Drawing.Point(0, 192);
             this.panelCalendar.Margin = new System.Windows.Forms.Padding(0);
             this.panelCalendar.Name = "panelCalendar";
-            this.panelCalendar.Size = new System.Drawing.Size(267, 66);
+            this.panelCalendar.Size = new System.Drawing.Size(200, 54);
             this.panelCalendar.TabIndex = 3;
             // 
             // btnCalendario
@@ -167,11 +167,10 @@
             this.btnCalendario.ForeColor = System.Drawing.Color.White;
             this.btnCalendario.Image = global::WindowsFormsApp1.Properties.Resources.calendar;
             this.btnCalendario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendario.Location = new System.Drawing.Point(-17, -12);
-            this.btnCalendario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCalendario.Location = new System.Drawing.Point(-13, -10);
             this.btnCalendario.Name = "btnCalendario";
-            this.btnCalendario.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnCalendario.Size = new System.Drawing.Size(284, 97);
+            this.btnCalendario.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnCalendario.Size = new System.Drawing.Size(213, 79);
             this.btnCalendario.TabIndex = 4;
             this.btnCalendario.Text = "             Calendar";
             this.btnCalendario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,16 +182,41 @@
             this.sideBarTransition.Interval = 10;
             this.sideBarTransition.Tick += new System.EventHandler(this.menuTransition_Tick);
             // 
+            // btnCadastro
+            // 
+            this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastro.ForeColor = System.Drawing.Color.White;
+            this.btnCadastro.Image = global::WindowsFormsApp1.Properties.Resources.home__3_;
+            this.btnCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastro.Location = new System.Drawing.Point(-13, -9);
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnCadastro.Size = new System.Drawing.Size(213, 79);
+            this.btnCadastro.TabIndex = 5;
+            this.btnCadastro.Text = "             Cadastro";
+            this.btnCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastro.UseVisualStyleBackColor = true;
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnCadastro);
+            this.panel1.Location = new System.Drawing.Point(0, 246);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 58);
+            this.panel1.TabIndex = 4;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1084, 573);
+            this.ClientSize = new System.Drawing.Size(813, 496);
             this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -203,6 +227,7 @@
             this.panelhome.ResumeLayout(false);
             this.panelDashboard.ResumeLayout(false);
             this.panelCalendar.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -220,6 +245,8 @@
         private System.Windows.Forms.PictureBox btnMenu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sideBarTransition;
+        private System.Windows.Forms.Button btnCadastro;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
