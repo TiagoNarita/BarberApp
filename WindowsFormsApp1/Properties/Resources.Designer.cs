@@ -129,5 +129,15 @@ namespace WindowsFormsApp1.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Post_Instagram_Barbearia_Corte_de_Cabelo {
+            get {
+                object obj = ResourceManager.GetObject("Post Instagram Barbearia Corte de Cabelo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

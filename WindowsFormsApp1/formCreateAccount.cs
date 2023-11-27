@@ -22,9 +22,10 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-            MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda");
-            MySqlCommand cmd = new MySqlCommand();
-            MySqlDataAdapter da = new MySqlDataAdapter();
+        MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda");
+        
+        MySqlCommand cmd = new MySqlCommand();
+        MySqlDataAdapter da = new MySqlDataAdapter();
         String confirmandoTeoria;
 
 

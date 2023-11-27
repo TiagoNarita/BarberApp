@@ -135,6 +135,12 @@
     <Compile Include="formHome.Designer.cs">
       <DependentUpon>formHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastro.Designer.cs">
+      <DependentUpon>FrmCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLoguin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formHome.resx">
       <DependentUpon>formHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastro.resx">
+      <DependentUpon>FrmCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoguin.resx">
       <DependentUpon>frmLoguin.cs</DependentUpon>
@@ -227,6 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Post Instagram Barbearia Corte de Cabelo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
