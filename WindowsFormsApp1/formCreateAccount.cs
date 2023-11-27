@@ -93,5 +93,10 @@ namespace WindowsFormsApp1
             new frmLoguin().Show();
             this.Close();
         }
+
+        private void frmCreateAccount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
