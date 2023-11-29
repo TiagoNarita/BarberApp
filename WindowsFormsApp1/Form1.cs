@@ -154,5 +154,10 @@ namespace WindowsFormsApp1
                 FrmCadastro.Activate();
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmLoguin : Form
     {
-        ArmazenaInfo armazenaInfo;
+        private ArmazenaInfo armazenaInfo;
         public frmLoguin()
         {
             InitializeComponent();
@@ -37,11 +37,15 @@ namespace WindowsFormsApp1
 
             if(dr.Read() == true)
             {
+                // Cria um novo objeto ArmazenaInfo e preenche com os detalhes do login
+                armazenaInfo = new ArmazenaInfo();
+
+                // Abre o Form1 e passa o objeto armazenaInfo
                 this.Hide();
-                Form1 form1 = new Form1();
+                Form1 form1 = new Form1(armazenaInfo);
                 form1.ShowDialog();
                 this.Close();
-                
+
 
             }
             else
