@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda");
+        MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=159482;database=barbagenda");
         MySqlCommand cmd = new MySqlCommand();
         MySqlDataAdapter da = new MySqlDataAdapter();
 
@@ -37,9 +37,8 @@ namespace WindowsFormsApp1
 
             if(dr.Read() == true)
             {
-                armazenaInfo = new ArmazenaInfo();
-                armazenaInfo.SetNick(txtUsername.Text);
-                Form1 form1 = new Form1(armazenaInfo);
+                this.Hide();
+                Form1 form1 = new Form1();
                 form1.ShowDialog();
                 this.Close();
                 
@@ -77,8 +76,11 @@ namespace WindowsFormsApp1
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            new frmCreateAccount().Show();
+            this.Hide();
+            frmCreateAccount frmCreateAccount = new frmCreateAccount();
+            frmCreateAccount.ShowDialog();
             this.Close();
+           
         }
 
         private void frmLoguin_Load(object sender, EventArgs e)
