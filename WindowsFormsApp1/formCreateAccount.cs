@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda");
+        MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=159482;database=barbagenda");
         
         MySqlCommand cmd = new MySqlCommand();
         MySqlDataAdapter da = new MySqlDataAdapter();
@@ -33,7 +33,8 @@ namespace WindowsFormsApp1
         {
             if (txtUsername.Text == "" && txtPassword.Text == "" && txtConfPassword.Text == "")
             {
-                MessageBox.Show("Usarname and Password fields are empty", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Use" +
+                    "Username and Password fields are empty", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txtPassword.Text == txtConfPassword.Text)
             {
@@ -90,7 +91,9 @@ namespace WindowsFormsApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            new frmLoguin().Show();
+            this.Hide();
+            frmLoguin frmlogin = new frmLoguin();
+            frmlogin.ShowDialog();
             this.Close();
         }
 
