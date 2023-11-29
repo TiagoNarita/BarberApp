@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class UserControlDays : UserControl
     {
+        public static string static_day;
+
         public UserControlDays()
         {
             InitializeComponent();
@@ -22,9 +25,22 @@ namespace WindowsFormsApp1
 
         }
 
-        public void days(int numDay)
+        public void days(int numday)
         {
-            lbDays.Text = numDay + "";
+
+            lbDays.Text = numday + "";
         }
+
+        private void UserControlDays_Click(object sender, EventArgs e)
+        {
+
+            static_day = lbDays.Text;
+
+            // Passe a data como parâmetro ao criar o FormEvento
+            FormEvento formEvento = new FormEvento();
+            formEvento.Show();
+        }
+
+        
     }
 }
