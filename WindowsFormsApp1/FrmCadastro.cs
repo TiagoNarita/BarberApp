@@ -16,5 +16,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void FrmCadastro_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false;
+        }
     }
 }

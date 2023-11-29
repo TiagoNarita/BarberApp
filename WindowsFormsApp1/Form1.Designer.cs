@@ -32,23 +32,23 @@
             this.menu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelhome = new System.Windows.Forms.Panel();
-            this.panelDashboard = new System.Windows.Forms.Panel();
-            this.panelCalendar = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.sideBarTransition = new System.Windows.Forms.Timer(this.components);
             this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.panelhome = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
+            this.panelDashboard = new System.Windows.Forms.Panel();
             this.btnDash = new System.Windows.Forms.Button();
+            this.panelCalendar = new System.Windows.Forms.Panel();
             this.btnCalendario = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnCadastro = new System.Windows.Forms.Button();
+            this.sideBarTransition = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.panelhome.SuspendLayout();
             this.panelDashboard.SuspendLayout();
             this.panelCalendar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -87,47 +87,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
-            // panelhome
-            // 
-            this.panelhome.Controls.Add(this.btnHome);
-            this.panelhome.Location = new System.Drawing.Point(0, 83);
-            this.panelhome.Margin = new System.Windows.Forms.Padding(0);
-            this.panelhome.Name = "panelhome";
-            this.panelhome.Size = new System.Drawing.Size(200, 58);
-            this.panelhome.TabIndex = 0;
-            // 
-            // panelDashboard
-            // 
-            this.panelDashboard.Controls.Add(this.btnDash);
-            this.panelDashboard.Location = new System.Drawing.Point(0, 141);
-            this.panelDashboard.Margin = new System.Windows.Forms.Padding(0);
-            this.panelDashboard.Name = "panelDashboard";
-            this.panelDashboard.Size = new System.Drawing.Size(200, 51);
-            this.panelDashboard.TabIndex = 2;
-            // 
-            // panelCalendar
-            // 
-            this.panelCalendar.Controls.Add(this.btnCalendario);
-            this.panelCalendar.Location = new System.Drawing.Point(0, 192);
-            this.panelCalendar.Margin = new System.Windows.Forms.Padding(0);
-            this.panelCalendar.Name = "panelCalendar";
-            this.panelCalendar.Size = new System.Drawing.Size(200, 54);
-            this.panelCalendar.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnCadastro);
-            this.panel1.Location = new System.Drawing.Point(0, 246);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 58);
-            this.panel1.TabIndex = 4;
-            // 
-            // sideBarTransition
-            // 
-            this.sideBarTransition.Interval = 10;
-            this.sideBarTransition.Tick += new System.EventHandler(this.menuTransition_Tick);
-            // 
             // btnMenu
             // 
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -139,6 +98,15 @@
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // panelhome
+            // 
+            this.panelhome.Controls.Add(this.btnHome);
+            this.panelhome.Location = new System.Drawing.Point(0, 83);
+            this.panelhome.Margin = new System.Windows.Forms.Padding(0);
+            this.panelhome.Name = "panelhome";
+            this.panelhome.Size = new System.Drawing.Size(200, 58);
+            this.panelhome.TabIndex = 0;
             // 
             // btnHome
             // 
@@ -157,6 +125,15 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panelDashboard
+            // 
+            this.panelDashboard.Controls.Add(this.btnDash);
+            this.panelDashboard.Location = new System.Drawing.Point(0, 141);
+            this.panelDashboard.Margin = new System.Windows.Forms.Padding(0);
+            this.panelDashboard.Name = "panelDashboard";
+            this.panelDashboard.Size = new System.Drawing.Size(200, 51);
+            this.panelDashboard.TabIndex = 2;
+            // 
             // btnDash
             // 
             this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -174,6 +151,15 @@
             this.btnDash.UseVisualStyleBackColor = true;
             this.btnDash.Click += new System.EventHandler(this.button2_Click);
             // 
+            // panelCalendar
+            // 
+            this.panelCalendar.Controls.Add(this.btnCalendario);
+            this.panelCalendar.Location = new System.Drawing.Point(0, 192);
+            this.panelCalendar.Margin = new System.Windows.Forms.Padding(0);
+            this.panelCalendar.Name = "panelCalendar";
+            this.panelCalendar.Size = new System.Drawing.Size(200, 54);
+            this.panelCalendar.TabIndex = 3;
+            // 
             // btnCalendario
             // 
             this.btnCalendario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -186,10 +172,19 @@
             this.btnCalendario.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnCalendario.Size = new System.Drawing.Size(213, 79);
             this.btnCalendario.TabIndex = 4;
-            this.btnCalendario.Text = "             Calendar";
+            this.btnCalendario.Text = "             Calendario";
             this.btnCalendario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalendario.UseVisualStyleBackColor = true;
             this.btnCalendario.Click += new System.EventHandler(this.btnCalendario_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnCadastro);
+            this.panel1.Location = new System.Drawing.Point(0, 246);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 58);
+            this.panel1.TabIndex = 4;
             // 
             // btnCadastro
             // 
@@ -208,6 +203,11 @@
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
+            // sideBarTransition
+            // 
+            this.sideBarTransition.Interval = 10;
+            this.sideBarTransition.Tick += new System.EventHandler(this.menuTransition_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,11 +222,11 @@
             this.menu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.panelhome.ResumeLayout(false);
             this.panelDashboard.ResumeLayout(false);
             this.panelCalendar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
