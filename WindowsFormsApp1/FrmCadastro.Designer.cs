@@ -143,9 +143,9 @@
             this.Cliente.Location = new System.Drawing.Point(51, 125);
             this.Cliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Cliente.Name = "Cliente";
-            this.Cliente.Size = new System.Drawing.Size(66, 20);
+            this.Cliente.Size = new System.Drawing.Size(160, 20);
             this.Cliente.TabIndex = 33;
-            this.Cliente.Text = "Nome:";
+            this.Cliente.Text = "Nome Completo:";
             // 
             // label6
             // 
@@ -191,12 +191,12 @@
             this.gvFuncionarios.AllowUserToAddRows = false;
             this.gvFuncionarios.AllowUserToDeleteRows = false;
             this.gvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvFuncionarios.Location = new System.Drawing.Point(425, 125);
+            this.gvFuncionarios.Location = new System.Drawing.Point(369, 116);
             this.gvFuncionarios.Margin = new System.Windows.Forms.Padding(4);
             this.gvFuncionarios.Name = "gvFuncionarios";
             this.gvFuncionarios.ReadOnly = true;
             this.gvFuncionarios.RowHeadersWidth = 51;
-            this.gvFuncionarios.Size = new System.Drawing.Size(625, 314);
+            this.gvFuncionarios.Size = new System.Drawing.Size(618, 314);
             this.gvFuncionarios.TabIndex = 37;
             // 
             // FrmCadastro

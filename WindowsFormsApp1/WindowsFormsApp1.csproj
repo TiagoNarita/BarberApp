@@ -99,6 +99,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agendamento.cs" />
     <Compile Include="Cadastro.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ArmazenaInfo.cs" />

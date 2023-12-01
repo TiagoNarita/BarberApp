@@ -13,67 +13,110 @@ namespace WindowsFormsApp1
 {
     public partial class FrmAgendamento : Form
     {
-
-        private MySqlConnection connection;
-        private string connectionString = (@"server=localhost;port=3306;uid=root;pwd=159482;database=barbagenda");
-
+        private Agendamento agendamento;
         public FrmAgendamento()
         {
             InitializeComponent();
-            connection = new MySqlConnection(connectionString);
-            LoadData();
 
-           /* Image image = Image.FromFile("C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\testeTrabalho\\WindowsFormsApp1\\Resources\\Agenda-PainelFundo.png");
+            agendamento = new Agendamento();
 
-            // Definindo a cor de fundo do PictureBox como a cor que você deseja tornar transparente
-            formularioImg.BackColor = Color.Transparent;
 
-            // Evento Paint do PictureBox
-            formularioImg.Paint += (s, args) =>
-            {
-                // Desenha a imagem com partes transparentes no PictureBox
-                args.Graphics.DrawImage(image, new Rectangle(Point.Empty, formularioImg.Size));
-            };*/
+            /* Image image = Image.FromFile("C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\testeTrabalho\\WindowsFormsApp1\\Resources\\Agenda-PainelFundo.png");
+
+             // Definindo a cor de fundo do PictureBox como a cor que você deseja tornar transparente
+             formularioImg.BackColor = Color.Transparent;
+
+             // Evento Paint do PictureBox
+             formularioImg.Paint += (s, args) =>
+             {
+                 // Desenha a imagem com partes transparentes no PictureBox
+                 args.Graphics.DrawImage(image, new Rectangle(Point.Empty, formularioImg.Size));
+             };*/
         }
 
-        private void LoadData()
+        private void FrmAgendamento_Load(object sender, EventArgs e)
         {
-            try
+            // Preencher ComboBox de Clientes
+            List<Tuple<int, string>> nomesClientes = agendamento.ObterNomesClientes();
+            comboBoxCliente.DisplayMember = "Item2";
+            comboBoxCliente.ValueMember = "Item1";
+            comboBoxCliente.DataSource = nomesClientes;
+
+            // Preencher ComboBox de Serviços
+            List<string> nomesServicos = agendamento.ObterNomesServicos();
+            comboBoxServico.DataSource = nomesServicos;
+
+            // Adicionar o evento SelectedIndexChanged ao ComboBox de Serviços
+            comboBoxServico.SelectedIndexChanged += comboBoxServico_SelectedIndexChanged;
+
+            // Mostrar o valor do serviço inicialmente selecionado
+            if (comboBoxServico.SelectedItem != null)
             {
-                connection.Open();
-                string query = "SELECT * FROM users";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable; // Vincula os dados ao DataGridView
-                ConfigurarGradeLivros();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
+                string servicoSelecionado = comboBoxServico.GetItemText(comboBoxServico.SelectedItem);
+                decimal valorServico = agendamento.ObterValorServico(servicoSelecionado);
+                txbValor.Text = valorServico.ToString("C");
             }
         }
 
-        private void ConfigurarGradeLivros()
+
+        private void comboBoxServico_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 9);
-            dataGridView1.RowHeadersWidth = 25;
+            // Obtem o valor selecionado do ComboBox convertendo para string
+            string servicoSelecionado = comboBoxServico.GetItemText(comboBoxServico.SelectedItem);
 
-            dataGridView1.Columns["id"].HeaderText = "ID";
-            dataGridView1.Columns["id"].Visible = false;
-
-            dataGridView1.Columns["username"].HeaderText = "Usuários";
-            dataGridView1.Columns["username"].Width = 130;
-            dataGridView1.Columns["username"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["username"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-         
-            dataGridView1.Columns["passwords"].HeaderText = "Book authors";
-            dataGridView1.Columns["passwords"].Width = 500;
+            // Verifica se o valor não é nulo ou vazio antes de prosseguir
+            if (!string.IsNullOrEmpty(servicoSelecionado))
+            {
+                // Obter o valor do serviço e exibir na TextBox
+                decimal valorServico = agendamento.ObterValorServico(servicoSelecionado);
+                txbValor.Text = valorServico.ToString("C");
+            }
         }
-    }
+
+        private void AtualizarComboBoxClientes()
+        {
+            List<Tuple<int, string>> nomesClientes = agendamento.ObterNomesClientes();
+            comboBoxCliente.DisplayMember = "Item2";
+            comboBoxCliente.ValueMember = "Item1";
+            comboBoxCliente.DataSource = nomesClientes;
+        }
+
+        private void btnAgendar_Click(object sender, EventArgs e)
+        {
+            // Obter os valores selecionados nos ComboBoxes e TextBoxes
+            int idCliente = (int)comboBoxCliente.SelectedValue;
+            string servicoSelecionado = comboBoxServico.SelectedItem.ToString();
+            DateTime dataAtendimento = DateTime.Parse(txbData.Text);
+            DateTime horario = DateTime.Parse(txbHorario.Text);
+
+            // Obter o ID do serviço selecionado
+            int idServico = agendamento.ObterIdServico(servicoSelecionado); // Implemente essa função na sua lógica
+
+            // Agendar
+            bool agendado = agendamento.Agendar(idCliente, idServico, dataAtendimento, horario);
+            if (agendado)
+            {
+                MessageBox.Show("Agendamento realizado com sucesso!");
+                // Atualizar o DataGridView com os novos dados
+                AtualizarGridAgendamentos();
+            }
+            else
+            {
+                MessageBox.Show("Falha ao agendar!");
+            }
+        }
+
+
+        private void AtualizarGridAgendamentos()
+        {
+             dataGridView1.DataSource = agendamento.ObterAgendamentos();
+        }
+
+
+
+      
+
+
+    }  
+    
 }
