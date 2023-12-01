@@ -56,6 +56,8 @@ namespace WindowsFormsApp1
                 cmdInsert.ExecuteNonQuery();
 
             }
+
+         
             finally
             {
                 //libera a memória utilizada pelos comandos
@@ -67,7 +69,7 @@ namespace WindowsFormsApp1
 
         //-------------------------------------------------------------------------
 
-        public Cliente pesquisarClienteCPF(string cpf)
+        public Cliente pesquisarClienteNome(string nome)
         {
 
             MySqlConnection connectionBD = null;
@@ -90,11 +92,11 @@ namespace WindowsFormsApp1
                 cmdSelect.Connection = connectionBD;
 
                 //seta o comando sql que será executado
-                cmdSelect.CommandText = "SELECT nome, telefone, email " +
-                                        "FROM clientes WHERE cpf = @cpf";
+                cmdSelect.CommandText = "SELECT cpf, telefone, email " +
+                                        "FROM clientes WHERE nome = @nome";
 
                 //seta os parametros que deverão ser passados para a consulta sql
-                cmdSelect.Parameters.AddWithValue("cpf", cpf);
+                cmdSelect.Parameters.AddWithValue("nome", nome);
 
                 MySqlDataReader reader = cmdSelect.ExecuteReader(); //executa o comando que retornará um datareader
                                                                     //para acessar os dados da tabela
@@ -106,7 +108,7 @@ namespace WindowsFormsApp1
                     reader.Read();
 
                     //pega os dados das colunas da linha
-                    string nome = reader.GetString(0);
+                    string cpf = reader.GetString(0);
                     string telefone = reader.GetString(1);
                     string email = reader.GetString(2);
                     
@@ -134,12 +136,12 @@ namespace WindowsFormsApp1
         //-------------------------------------------------------------------------
 
         //Remove a pessoa do cadastro que possuir um cpf igual ao passado como parâmetro.
-        public bool removerClienteCPF(string cpf)
+        public bool removerClienteNome(string nome)
         {
             //procura um funcionário que possua o cpf igual ao passado como parâmetro
             //caso encontre retorna uma referência para esse funcionário;
             //caso não encontre, retorna null
-            Cliente cliente = pesquisarClienteCPF(cpf);
+            Cliente cliente = pesquisarClienteNome(nome);
 
             //caso encontre uma pessoa
             if (cliente != null)
@@ -164,10 +166,10 @@ namespace WindowsFormsApp1
 
                     //seta o comando sql que será executado
                     cmdDelete.CommandText = "DELETE FROM clientes " +
-                                            "WHERE cpf = @cpf";
+                                            "WHERE nome = @nome";
 
                     //seta os parametros que deverão ser passados para a consulta sql
-                    cmdDelete.Parameters.AddWithValue("cpf", cpf);
+                    cmdDelete.Parameters.AddWithValue("nome", nome);
 
                     //executa o comando / consulta sql
                     cmdDelete.ExecuteNonQuery();
@@ -196,7 +198,7 @@ namespace WindowsFormsApp1
 
         //-------------------------------------------------------------------------
 
-        public bool atualizarCliente(string pesquisacpf, Cliente cliente)
+        public bool atualizarCliente(string pesquisanome, Cliente cliente)
         {
             int numLinhasAfetadas = 0;
             MySqlConnection connectionBD = null;
@@ -223,14 +225,14 @@ namespace WindowsFormsApp1
                         "telefone=@telefone, " +
                         "email=@email, " +
                         "cpf=@cpf " +
-                        "WHERE cpf = @pesquisacpf";
+                        "WHERE nome = @pesquisanome";
 
                 //seta os parametros que deverão ser passados para a consulta sql
                 cmdUpdate.Parameters.AddWithValue("nome", cliente.getNome());
-                cmdUpdate.Parameters.AddWithValue("telefone", cliente.getTelefone());
-                cmdUpdate.Parameters.AddWithValue("email", cliente.getEmail());
                 cmdUpdate.Parameters.AddWithValue("cpf", cliente.getCPF());
-                cmdUpdate.Parameters.AddWithValue("pesquisacpf", pesquisacpf);
+                cmdUpdate.Parameters.AddWithValue("telefone", cliente.getTelefone());
+                cmdUpdate.Parameters.AddWithValue("email", cliente.getEmail());             
+                cmdUpdate.Parameters.AddWithValue("pesquisanome", pesquisanome);
 
                 //executa o comando / consulta sql
                 numLinhasAfetadas = cmdUpdate.ExecuteNonQuery();
@@ -251,7 +253,7 @@ namespace WindowsFormsApp1
 
         //-------------------------------------------------------------------------
 
-        /*public void gerarRelatorioFuncionario(DataTable table)
+        public void gerarRelatorioCliente(DataTable table)
         {
             MySqlConnection connectionBD = null;
             MySqlCommand cmdSelect = null;
@@ -267,15 +269,14 @@ namespace WindowsFormsApp1
                 //abre a conexão com o banco
                 connectionBD.Open();
 
-                // Executa um comando INSERT para inserir um registro na tabela 'Funcionario'
-                // Como o INSERT não retorna valores, devemos executar o comando 'ExecuteNonQuery'
+               
                 cmdSelect = new MySqlCommand();
 
                 //atribui uma conexão ao comando (obrigatório)
                 cmdSelect.Connection = connectionBD;
 
                 //seta o comando sql que será executado
-                cmdSelect.CommandText = "SELECT nome, cpf, dataAdmissao, qtdDependentes, qtdHoras, salario FROM Funcionario";
+                cmdSelect.CommandText = "SELECT nome, cpf, telefone, email FROM clientes";
 
 
                 MySqlDataReader reader = cmdSelect.ExecuteReader(); //executa o comando que retornará um datareader
@@ -298,8 +299,11 @@ namespace WindowsFormsApp1
                 if (cmdSelect != null) cmdSelect.Dispose();
                 //fecha a conexão com o banco!
                 if (connectionBD != null) connectionBD.Close();
+
+                //libera os recursos da tabela!
+         
             }
-        }*/
+        }
 
     }
 }

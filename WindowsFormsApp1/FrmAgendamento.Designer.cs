@@ -51,9 +51,10 @@
             // formularioImg
             // 
             this.formularioImg.Image = global::WindowsFormsApp1.Properties.Resources.Agenda_PainelFundo;
-            this.formularioImg.Location = new System.Drawing.Point(12, -25);
+            this.formularioImg.Location = new System.Drawing.Point(16, -31);
+            this.formularioImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.formularioImg.Name = "formularioImg";
-            this.formularioImg.Size = new System.Drawing.Size(615, 526);
+            this.formularioImg.Size = new System.Drawing.Size(820, 647);
             this.formularioImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.formularioImg.TabIndex = 2;
             this.formularioImg.TabStop = false;
@@ -70,10 +71,12 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 279);
+            this.dataGridView1.Location = new System.Drawing.Point(49, 343);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(556, 150);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(741, 185);
             this.dataGridView1.TabIndex = 4;
             // 
             // comboBox1
@@ -82,20 +85,22 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Corte",
             "Barba",
-            "Sombrancelha",
+            "Sobrancelha",
             "Corte + barba",
-            "Corte + Sombrancelha",
+            "Corte + Sobrancelha",
             "Completo"});
-            this.comboBox1.Location = new System.Drawing.Point(150, 127);
+            this.comboBox1.Location = new System.Drawing.Point(200, 156);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 5;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 88);
+            this.textBox1.Location = new System.Drawing.Point(200, 108);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.Size = new System.Drawing.Size(160, 22);
             this.textBox1.TabIndex = 6;
             // 
             // mySqlCommand2
@@ -107,16 +112,18 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(150, 168);
+            this.textBox2.Location = new System.Drawing.Point(200, 207);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
+            this.textBox2.Size = new System.Drawing.Size(160, 22);
             this.textBox2.TabIndex = 7;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(150, 242);
+            this.textBox3.Location = new System.Drawing.Point(200, 298);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.Size = new System.Drawing.Size(160, 22);
             this.textBox3.TabIndex = 8;
             // 
             // label1
@@ -125,9 +132,10 @@
             this.label1.BackColor = System.Drawing.SystemColors.Desktop;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(254, 46);
+            this.label1.Location = new System.Drawing.Point(339, 57);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 27);
+            this.label1.Size = new System.Drawing.Size(126, 34);
             this.label1.TabIndex = 9;
             this.label1.Text = "Agenda";
             // 
@@ -135,9 +143,10 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(295, 209);
+            this.button1.Location = new System.Drawing.Point(393, 257);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(298, 53);
+            this.button1.Size = new System.Drawing.Size(397, 65);
             this.button1.TabIndex = 10;
             this.button1.Text = "Agendar";
             this.button1.UseVisualStyleBackColor = false;
@@ -148,17 +157,19 @@
             this.Cliente.BackColor = System.Drawing.SystemColors.Desktop;
             this.Cliente.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cliente.ForeColor = System.Drawing.Color.White;
-            this.Cliente.Location = new System.Drawing.Point(72, 92);
+            this.Cliente.Location = new System.Drawing.Point(96, 113);
+            this.Cliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Cliente.Name = "Cliente";
-            this.Cliente.Size = new System.Drawing.Size(61, 16);
+            this.Cliente.Size = new System.Drawing.Size(74, 20);
             this.Cliente.TabIndex = 11;
             this.Cliente.Text = "Cliente";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(150, 205);
+            this.textBox4.Location = new System.Drawing.Point(200, 252);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
+            this.textBox4.Size = new System.Drawing.Size(160, 22);
             this.textBox4.TabIndex = 15;
             // 
             // label3
@@ -167,9 +178,10 @@
             this.label3.BackColor = System.Drawing.SystemColors.Desktop;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(72, 132);
+            this.label3.Location = new System.Drawing.Point(96, 162);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "Serviço";
             // 
@@ -179,9 +191,10 @@
             this.label4.BackColor = System.Drawing.SystemColors.Desktop;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(64, 168);
+            this.label4.Location = new System.Drawing.Point(85, 207);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 16);
+            this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "Valor R$";
             // 
@@ -191,9 +204,10 @@
             this.label5.BackColor = System.Drawing.SystemColors.Desktop;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(72, 205);
+            this.label5.Location = new System.Drawing.Point(96, 252);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 16);
+            this.label5.Size = new System.Drawing.Size(53, 20);
             this.label5.TabIndex = 18;
             this.label5.Text = "Data";
             // 
@@ -203,19 +217,20 @@
             this.label6.BackColor = System.Drawing.SystemColors.Desktop;
             this.label6.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(72, 242);
+            this.label6.Location = new System.Drawing.Point(96, 298);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 16);
+            this.label6.Size = new System.Drawing.Size(53, 20);
             this.label6.TabIndex = 19;
             this.label6.Text = "Hora";
             // 
             // FrmAgendamento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.Close_up_de_escova_de_barba_com_fundo_desfocado___Foto_Premium;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(768, 450);
+            this.ClientSize = new System.Drawing.Size(1024, 554);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -231,6 +246,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.formularioImg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmAgendamento";
             this.Text = "FrmAgendamento";
             ((System.ComponentModel.ISupportInitialize)(this.formularioImg)).EndInit();

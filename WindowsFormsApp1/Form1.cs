@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace WindowsFormsApp1
         formCalendar formCalendar;
         FrmCadastro FrmCadastro;
         FrmAgendamento FrmAgendamento;
-        //teste
+        Cadastro cadastro;
 
         ArmazenaInfo armazenaInfo;
         public Form1(ArmazenaInfo armazenaInfo)
@@ -142,9 +143,10 @@ namespace WindowsFormsApp1
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
+            
             if (FrmCadastro == null)
             {
-                FrmCadastro = new FrmCadastro();
+                FrmCadastro = new FrmCadastro(cadastro);
                 FrmCadastro.FormClosed += Home_FormClosed;
                 FrmCadastro.MdiParent = this;
                 FrmCadastro.Dock = DockStyle.Fill;

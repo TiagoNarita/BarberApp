@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
     {
 
         private MySqlConnection connection;
-        private string connectionString = (@"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda");
+        private string connectionString = (@"server=localhost;port=3306;uid=root;pwd=159482;database=barbagenda");
 
         public FrmAgendamento()
         {
@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
             connection = new MySqlConnection(connectionString);
             LoadData();
 
-            Image image = Image.FromFile("C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\testeTrabalho\\WindowsFormsApp1\\Resources\\Agenda-PainelFundo.png");
+           /* Image image = Image.FromFile("C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\testeTrabalho\\WindowsFormsApp1\\Resources\\Agenda-PainelFundo.png");
 
             // Definindo a cor de fundo do PictureBox como a cor que você deseja tornar transparente
             formularioImg.BackColor = Color.Transparent;
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             {
                 // Desenha a imagem com partes transparentes no PictureBox
                 args.Graphics.DrawImage(image, new Rectangle(Point.Empty, formularioImg.Size));
-            };
+            };*/
         }
 
         private void LoadData()

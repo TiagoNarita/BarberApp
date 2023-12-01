@@ -144,41 +144,17 @@
     <Compile Include="FrmAgendamento.Designer.cs">
       <DependentUpon>FrmAgendamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAlterar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAlterar.Designer.cs">
-      <DependentUpon>FrmAlterar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmCadastrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCadastrar.Designer.cs">
-      <DependentUpon>FrmCadastrar.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCadastro.Designer.cs">
       <DependentUpon>FrmCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmExcluir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmExcluir.Designer.cs">
-      <DependentUpon>FrmExcluir.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLoguin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLoguin.Designer.cs">
       <DependentUpon>frmLoguin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPesquisar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPesquisar.Designer.cs">
-      <DependentUpon>FrmPesquisar.cs</DependentUpon>
     </Compile>
     <Compile Include="MdiPropertis.cs" />
     <Compile Include="Program.cs" />
@@ -216,23 +192,11 @@
     <EmbeddedResource Include="FrmAgendamento.resx">
       <DependentUpon>FrmAgendamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAlterar.resx">
-      <DependentUpon>FrmAlterar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmCadastrar.resx">
-      <DependentUpon>FrmCadastrar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastro.resx">
       <DependentUpon>FrmCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmExcluir.resx">
-      <DependentUpon>FrmExcluir.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLoguin.resx">
       <DependentUpon>frmLoguin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPesquisar.resx">
-      <DependentUpon>FrmPesquisar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
