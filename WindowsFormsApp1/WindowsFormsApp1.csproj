@@ -312,5 +312,11 @@
   <ItemGroup>
     <None Include="Resources\Agenda-PainelFundo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agendar %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
