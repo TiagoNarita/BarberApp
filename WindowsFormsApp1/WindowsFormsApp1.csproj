@@ -138,6 +138,12 @@
     <Compile Include="formHome.Designer.cs">
       <DependentUpon>formHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgendamento.Designer.cs">
+      <DependentUpon>FrmAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAlterar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formHome.resx">
       <DependentUpon>formHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgendamento.resx">
+      <DependentUpon>FrmAgendamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAlterar.resx">
       <DependentUpon>FrmAlterar.cs</DependentUpon>
@@ -293,6 +302,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Post Instagram Barbearia Corte de Cabelo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Post Instagram Barbearia Corte de Cabelo %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close-up de escova de barba com fundo desfocado _ Foto Premium.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agenda-PainelFundo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

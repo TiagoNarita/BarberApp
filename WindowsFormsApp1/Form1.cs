@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         formHome formHome;
         formCalendar formCalendar;
         FrmCadastro FrmCadastro;
+        FrmAgendamento FrmAgendamento;
         //teste
 
         ArmazenaInfo armazenaInfo;
@@ -158,6 +159,22 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgendamento_Click(object sender, EventArgs e)
+        {
+            if (FrmAgendamento == null)
+            {
+                FrmAgendamento = new FrmAgendamento();
+                FrmAgendamento.FormClosed += Home_FormClosed;
+                FrmAgendamento.MdiParent = this;
+                FrmAgendamento.Dock = DockStyle.Fill;
+                FrmAgendamento.Show();
+            }
+            else
+            {
+                FrmAgendamento.Activate();
+            }
         }
     }
 }

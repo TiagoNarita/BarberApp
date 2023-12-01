@@ -63,9 +63,29 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Agenda_PainelFundo {
+            get {
+                object obj = ResourceManager.GetObject("Agenda-PainelFundo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendar {
             get {
                 object obj = ResourceManager.GetObject("calendar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Close_up_de_escova_de_barba_com_fundo_desfocado___Foto_Premium {
+            get {
+                object obj = ResourceManager.GetObject("Close-up de escova de barba com fundo desfocado _ Foto Premium", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +176,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap Post_Instagram_Barbearia_Corte_de_Cabelo__1_ {
             get {
                 object obj = ResourceManager.GetObject("Post Instagram Barbearia Corte de Cabelo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Post_Instagram_Barbearia_Corte_de_Cabelo__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("Post Instagram Barbearia Corte de Cabelo (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

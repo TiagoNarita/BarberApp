@@ -9,6 +9,7 @@ namespace WindowsFormsApp1
 {
     public static class MdiPropertis
     {
+        //Classe utilizada para redimensionar o menu leteral.
         [DllImport("user32.dll")]
         private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
 
