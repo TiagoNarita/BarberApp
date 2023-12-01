@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
 
             public Agendamento()
             {
-                connectionString = @"server=localhost;port=3306;uid=root;pwd=159482;database=barbagenda;ConnectionTimeout=2";
+                connectionString = @"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda;ConnectionTimeout=2";
             }
 
             public List<Tuple<int, string>> ObterNomesClientes()

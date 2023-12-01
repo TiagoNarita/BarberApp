@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 
         public Cadastro()
         {
-            connectionStr = @"server=localhost;port=3306;uid=root;pwd=159482;database=barbagenda;ConnectionTimeout=2";
+            connectionStr = @"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda;ConnectionTimeout=2";
         }
 
         //-------------------------------------------------------------------------

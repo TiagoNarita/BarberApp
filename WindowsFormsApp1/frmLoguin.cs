@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=159482;database=barbagenda");
+        MySqlConnection con = new MySqlConnection(@"server=localhost;port=3306;uid=root;pwd=834483Ti;database=barbagenda");
         MySqlCommand cmd = new MySqlCommand();
         MySqlDataAdapter da = new MySqlDataAdapter();
 
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             {
                 // Cria um novo objeto ArmazenaInfo e preenche com os detalhes do login
                 armazenaInfo = new ArmazenaInfo();
-
+                armazenaInfo.SetNick(txtUsername.Text);
                 // Abre o Form1 e passa o objeto armazenaInfo
                 this.Hide();
                 Form1 form1 = new Form1(armazenaInfo);
