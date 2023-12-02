@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         FrmCadastro FrmCadastro;
         FrmAgendamento FrmAgendamento;
         Cadastro cadastro;
+        frmLoguin frmLoguin;
 
         ArmazenaInfo armazenaInfo;
         public Form1(ArmazenaInfo armazenaInfo)
@@ -177,6 +178,14 @@ namespace WindowsFormsApp1
             {
                 FrmAgendamento.Activate();
             }
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLoguin frmLoguin = new frmLoguin();
+            frmLoguin.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
 {
     public partial class FormEvento : Form
     {
-        String connString = @"server=127.0.0.1;uid=root;pwd=159482;database=bd_calendario;ConnectionTimeout=2";
+        String connString = @"server=127.0.0.1;uid=root;pwd=834483Ti;database=bd_calendario;ConnectionTimeout=2";
 
         public FormEvento()
         {
