@@ -168,7 +168,7 @@ namespace WindowsFormsApp1
         public List<Agendamento> ObterAgendamentos()
         {
             List<Agendamento> agendamentos = new List<Agendamento>();
-            string query = "SELECT id, cliente_id, servico_id, data_atendimento, horario FROM Agendamentos";
+            string query = "SELECT id, cliente_id, servico_id, data_atendimento, horario_id FROM Agendamentos";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -186,7 +186,7 @@ namespace WindowsFormsApp1
                                 ClienteId = Convert.ToInt32(reader["cliente_id"]),
                                 ServicoId = Convert.ToInt32(reader["servico_id"]),
                                 DataAtendimento = Convert.ToDateTime(reader["data_atendimento"]),
-                                Horario = (TimeSpan)reader["horario"] // Conversão direta para TimeSpan
+                                Horario = TimeSpan.Parse(reader["horario_id"].ToString()) // Convertendo para TimeSpan
                             };
                             agendamentos.Add(agendamento);
                         }

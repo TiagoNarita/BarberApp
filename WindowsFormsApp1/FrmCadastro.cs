@@ -121,6 +121,7 @@ namespace WindowsFormsApp1
         private string emailOriginal;
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 string nome = txbNome.Text.Trim();

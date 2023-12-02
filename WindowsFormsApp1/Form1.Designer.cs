@@ -56,7 +56,7 @@
             // 
             // menu
             // 
-            this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.menu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.menu.Controls.Add(this.panel2);
             this.menu.Controls.Add(this.panelhome);
             this.menu.Controls.Add(this.panelDashboard);
@@ -97,7 +97,7 @@
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = global::WindowsFormsApp1.Properties.Resources.menu;
             this.btnMenu.Location = new System.Drawing.Point(29, 33);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(35, 36);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,7 +122,7 @@
             this.btnHome.Image = global::WindowsFormsApp1.Properties.Resources.home_icon_silhouette;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(-17, -11);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnHome.Size = new System.Drawing.Size(284, 97);
@@ -149,7 +149,7 @@
             this.btnDash.Image = global::WindowsFormsApp1.Properties.Resources.dashboard;
             this.btnDash.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDash.Location = new System.Drawing.Point(-17, -14);
-            this.btnDash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDash.Margin = new System.Windows.Forms.Padding(4);
             this.btnDash.Name = "btnDash";
             this.btnDash.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnDash.Size = new System.Drawing.Size(284, 90);
@@ -176,7 +176,7 @@
             this.btnCalendario.Image = global::WindowsFormsApp1.Properties.Resources.calendar;
             this.btnCalendario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalendario.Location = new System.Drawing.Point(-17, -12);
-            this.btnCalendario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCalendario.Margin = new System.Windows.Forms.Padding(4);
             this.btnCalendario.Name = "btnCalendario";
             this.btnCalendario.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnCalendario.Size = new System.Drawing.Size(284, 97);
@@ -203,7 +203,7 @@
             this.btnCadastro.Image = global::WindowsFormsApp1.Properties.Resources.verify;
             this.btnCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastro.Location = new System.Drawing.Point(-17, -11);
-            this.btnCadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCadastro.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnCadastro.Size = new System.Drawing.Size(284, 97);
@@ -230,7 +230,7 @@
             this.btnAgendamento.Image = global::WindowsFormsApp1.Properties.Resources.agendar__1_;
             this.btnAgendamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgendamento.Location = new System.Drawing.Point(-17, -11);
-            this.btnAgendamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgendamento.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgendamento.Name = "btnAgendamento";
             this.btnAgendamento.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnAgendamento.Size = new System.Drawing.Size(284, 97);
@@ -254,7 +254,7 @@
             this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
