@@ -12,86 +12,69 @@ using static WindowsFormsApp1.Cadastro;
 
 namespace WindowsFormsApp1
 {
-    public partial class FrmCadastro : Form
+    public partial class FormPesquisar : Form
     {
         private Cadastro cadastro;
         private DataTable dataTable;
-        public FrmCadastro(Cadastro cadastro)
+        public FormPesquisar(Cadastro cadastro)
         {
             InitializeComponent();
             this.cadastro = cadastro;
-        }
-        private void FrmCadastro_Load(object sender, EventArgs e)
-        {
-            cadastro = new Cadastro();
 
-            //cria uma tabela vazia
             dataTable = new DataTable();
-
-            //insere os dados do relatório na tabela
-            cadastro.gerarRelatorioCliente(dataTable);
-
-            //diz para o grid utilizar essa tabela como fonte de dados
-            //nesse caso o grid irá exibir os dados da tabela!
-            gvFuncionarios.DataSource = dataTable;
-
-            //libera os recursos da tabela!
-            
         }
-        private void btnCadastrar_Click(object sender, EventArgs e)
+
+        private string nomeOriginal;
+        private string cpfOriginal;
+        private string telefoneOriginal;
+        private string emailOriginal;
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            //recupera o texto do componente textbox e remove os espaços em branco do começo e fim
-            string nome = txbNome.Text.Trim();
-            if (nome == "")
-            {
-                MessageBox.Show("Insira um valor para o campo \"Nome\"");
-                return;
-            }
-
-            //recupera o texto do componente textbox e remove os espaços em branco do começo e fim
-            string cpf = txbCPF.Text.Trim();
-            if (cpf == "")
-            {
-                MessageBox.Show("Insira um valor para o campo \"CPF\"");
-                return;
-            }
-
-            //pega e valida os dados do textbox
-            string telefone = txbTelefone.Text.Trim();
-            if (telefone == "")
-            {
-                MessageBox.Show("Insira um valor para o campo \"Telefone\"");
-                return;
-            }
-
-            //pega e valida os dados do textbox
-            string email = txbEmail.Text.Trim();
-            if (email == "")
-            {
-                MessageBox.Show("Insira um valor para o campo \"Email\"");
-                return;
-            }
-
-            //pega e valida os dados do textbox
-
-
             try
             {
-                //cria um objeto funcionário com os dados dos textbox
-                Cliente cliente = new Cliente(nome, cpf, telefone, email);
+                string nome = txtPesquisar.Text.Trim();
+                if (nome == "")
+                {
+                    MessageBox.Show("Insira um valor para o campo \"Nome\"");
+                    return;
+                }
 
-                //cadastra o funcionario no banco
-                cadastro.inserirCliente(cliente);
+                //pesquisa se existe um funcionario com o cpf passado
+                Cliente cliente = cadastro.pesquisarClienteNome(nome);
 
-                //limpa os textbox com os dados do funcionario
-                clearTextBox();
+                //caso encontre um funcionario, a referência será diferente de null
+                if (cliente != null)
+                {
 
-                //informa o usuário que o funcionario foi cadastrado no banco
-                MessageBox.Show("Dados Salvos!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Armazena os dados originais obtidos na pesquisa
+                    nomeOriginal = cliente.getNome();
+                    cpfOriginal = cliente.getCPF();
+                    telefoneOriginal = cliente.getTelefone();
+                    emailOriginal = cliente.getEmail();
 
-                cadastro.gerarRelatorioCliente(dataTable);
+                    // Preenche os campos do formulário com os dados obtidos
+                    txbNome.Text = nomeOriginal;
+                    txbCPF.Text = cpfOriginal;
+                    txbTelefone.Text = telefoneOriginal;
+                    txbEmail.Text = emailOriginal;
 
-                AtualizadorClientes.NotificarClienteCadastrado();
+                    liberaCampos();
+
+                    datagridView.DataSource = dataTable;
+                    cadastro.gerarRelatorioCliente(dataTable);
+                    AtualizadorClientes.NotificarClienteCadastrado();
+
+                }
+                // funcionario == null -> não encontrou um funcionario com o cpf passado!
+                else
+                {
+                    //limpa os textbox com os dados do funcionario
+                    clearTextBox();
+                    //mostra uma mensagem de erro
+                    MessageBox.Show("Não existe um cliente com esse nome!");
+                }
+
             }
             //trata os erros relacionados ao banco
             catch (MySqlException erro)
@@ -115,22 +98,17 @@ namespace WindowsFormsApp1
                 MessageBox.Show(sb.ToString(), "ERRO Desconhecido!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-           
         }
 
-        private string nomeOriginal;
-        private string cpfOriginal;
-        private string telefoneOriginal;
-        private string emailOriginal;
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void clearTextBox()
         {
-            FormPesquisar FormPesquisar = new FormPesquisar(cadastro);
-            FormPesquisar.ShowDialog();
-
-
+            txbNome.Clear();
+            txbCPF.Clear();
+            txbTelefone.Clear();
+            txbEmail.Clear();
         }
 
-        private void btnAtualizar_Click(object sender, EventArgs e)
+        private void btnAltera_Click(object sender, EventArgs e)
         {
             try
             {
@@ -165,7 +143,10 @@ namespace WindowsFormsApp1
 
                         MessageBox.Show("Dados Salvos!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cadastro.gerarRelatorioCliente(dataTable);
+
                         AtualizadorClientes.NotificarClienteCadastrado();
+
+                        bloqueiaCampos();
                     }
                     else
                     {
@@ -177,7 +158,7 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show("Nenhum dado foi alterado.");
                 }
-               
+
             }
             catch (MySqlException erro)
             {
@@ -190,10 +171,9 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Erro desconhecido: " + erro.Message, "ERRO Desconhecido!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    
 
         private void btnExcluir_Click(object sender, EventArgs e)
-        {//recupera o cpf usado na pesquisa (remove os espaços em branco do começo e fim do texto)
+        {
             string nome = txbNome.Text.Trim();
             if (nome == "")
             {
@@ -205,7 +185,7 @@ namespace WindowsFormsApp1
             if (cadastro.removerClienteNome(nome) == true)
             {
 
-                
+
                 clearTextBox();
 
                 //informa o usuário que o funcionário foi removido do banco!
@@ -229,17 +209,32 @@ namespace WindowsFormsApp1
 
             //limpa os texbox de dados
             clearTextBox();
+
+            bloqueiaCampos();
         }
 
-
-      
-
-        private void clearTextBox()
+        private void liberaCampos()
         {
-            txbNome.Clear();
-            txbCPF.Clear();
-            txbTelefone.Clear();
-            txbEmail.Clear();
+            btnAltera.Visible = true;
+            btnExcluir.Visible = true;
+
+
+            txbNome.Enabled = true;
+            txbCPF.Enabled = true;
+            txbEmail.Enabled = true;
+            txbTelefone.Enabled = true;
+        }
+
+        private void bloqueiaCampos()
+        {
+            btnAltera.Visible = false;
+            btnExcluir.Visible = false;
+
+
+            txbNome.Enabled = false;
+            txbCPF.Enabled = false;
+            txbEmail.Enabled = false;
+            txbTelefone.Enabled = false;
         }
     }
 }
