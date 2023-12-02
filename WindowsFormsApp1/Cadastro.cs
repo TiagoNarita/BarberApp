@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    //teste
     public class Cadastro
     {
         private string connectionStr;
