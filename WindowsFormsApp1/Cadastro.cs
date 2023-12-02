@@ -305,5 +305,16 @@ namespace WindowsFormsApp1
             }
         }
 
+
+        public static class AtualizadorClientes
+        {
+            public static event EventHandler ClienteCadastrado;
+
+            public static void NotificarClienteCadastrado()
+            {
+                EventHandler handler = ClienteCadastrado;
+                handler?.Invoke(null, EventArgs.Empty);
+            }
+        }
     }
 }

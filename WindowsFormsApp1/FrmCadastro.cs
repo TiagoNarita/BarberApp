@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static WindowsFormsApp1.Cadastro;
 
 namespace WindowsFormsApp1
 {
@@ -89,6 +90,8 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Dados Salvos!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 cadastro.gerarRelatorioCliente(dataTable);
+
+                AtualizadorClientes.NotificarClienteCadastrado();
             }
             //trata os erros relacionados ao banco
             catch (MySqlException erro)
@@ -152,12 +155,10 @@ namespace WindowsFormsApp1
                     }
 
                 }
-                // funcionario == null -> não encontrou um funcionario com o cpf passado!
+                
                 else
                 {
-                    //limpa os textbox com os dados do funcionario
-                    clearTextBox();
-                    //mostra uma mensagem de erro
+                  
                     MessageBox.Show("Não existe um cliente com esse nome!");
                 }
 
@@ -223,6 +224,8 @@ namespace WindowsFormsApp1
 
                         MessageBox.Show("Dados Salvos!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cadastro.gerarRelatorioCliente(dataTable);
+
+                        AtualizadorClientes.NotificarClienteCadastrado();
                     }
                     else
                     {
@@ -268,6 +271,8 @@ namespace WindowsFormsApp1
                 //informa o usuário que o funcionário foi removido do banco!
                 MessageBox.Show("Cliente removido do cadastro com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cadastro.gerarRelatorioCliente(dataTable);
+
+                AtualizadorClientes.NotificarClienteCadastrado();
 
             }
             //caso não encontre uma pessoa com o cpf digitado

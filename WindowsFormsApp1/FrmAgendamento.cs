@@ -8,30 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static WindowsFormsApp1.Cadastro;
 
 namespace WindowsFormsApp1
 {
     public partial class FrmAgendamento : Form
     {
         private Agendamento agendamento;
+        private List<TimeSpan> horariosDisponiveis;
         public FrmAgendamento()
         {
             InitializeComponent();
 
             agendamento = new Agendamento();
 
+            AtualizadorClientes.ClienteCadastrado += AtualizarComboBoxClientes;
+            PreencherComboBoxHorarios(comboBoxHorarios);
 
-            /* Image image = Image.FromFile("C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\testeTrabalho\\WindowsFormsApp1\\Resources\\Agenda-PainelFundo.png");
 
-             // Definindo a cor de fundo do PictureBox como a cor que você deseja tornar transparente
-             formularioImg.BackColor = Color.Transparent;
 
-             // Evento Paint do PictureBox
-             formularioImg.Paint += (s, args) =>
-             {
-                 // Desenha a imagem com partes transparentes no PictureBox
-                 args.Graphics.DrawImage(image, new Rectangle(Point.Empty, formularioImg.Size));
-             };*/
         }
 
         private void FrmAgendamento_Load(object sender, EventArgs e)
@@ -73,50 +68,90 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void AtualizarComboBoxClientes()
+        private void AtualizarComboBoxClientes(object sender, EventArgs e)
         {
+            // Atualiza a ComboBox de Clientes
             List<Tuple<int, string>> nomesClientes = agendamento.ObterNomesClientes();
             comboBoxCliente.DisplayMember = "Item2";
             comboBoxCliente.ValueMember = "Item1";
             comboBoxCliente.DataSource = nomesClientes;
         }
 
+        public void PreencherComboBoxHorarios(ComboBox comboBox)
+        {
+            List<TimeSpan> horarios = agendamento.ObterHorariosDisponiveis();
+            comboBox.Items.Clear(); // Limpa os itens atuais da ComboBox
+
+            foreach (TimeSpan horario in horarios)
+            {
+                comboBox.Items.Add(horario.ToString(@"hh\:mm"));
+            }
+        }
         private void btnAgendar_Click(object sender, EventArgs e)
         {
-            // Obter os valores selecionados nos ComboBoxes e TextBoxes
-            int idCliente = (int)comboBoxCliente.SelectedValue;
-            string servicoSelecionado = comboBoxServico.SelectedItem.ToString();
-            DateTime dataAtendimento = DateTime.Parse(txbData.Text);
-            DateTime horario = DateTime.Parse(txbHorario.Text);
-
-            // Obter o ID do serviço selecionado
-            int idServico = agendamento.ObterIdServico(servicoSelecionado); // Implemente essa função na sua lógica
-
-            // Agendar
-            bool agendado = agendamento.Agendar(idCliente, idServico, dataAtendimento, horario);
-            if (agendado)
+            if (comboBoxHorarios.SelectedItem != null)
             {
-                MessageBox.Show("Agendamento realizado com sucesso!");
-                // Atualizar o DataGridView com os novos dados
-                AtualizarGridAgendamentos();
+                string horarioSelecionado = comboBoxHorarios.SelectedItem.ToString();
+
+                if (TimeSpan.TryParseExact(horarioSelecionado, @"hh\:mm", null, out TimeSpan horario))
+                {
+                    if (comboBoxCliente.SelectedItem != null && comboBoxServico.SelectedItem != null && dateTimePickerData.Value != DateTime.MinValue)
+                    {
+                        int idServico = agendamento.ObterIdServico(comboBoxServico.SelectedItem.ToString());
+
+                        if ((int)comboBoxCliente.SelectedValue > 0 && idServico > 0)
+                        {
+                            int idHorario = agendamento.ObterIdHorarioSelecionado(comboBoxHorarios.SelectedItem.ToString());
+                            // Substitua ObterIdHorarioSelecionado pelo método que você criou para obter o ID do horário selecionado
+
+                            if (idHorario > 0)
+                            {
+                                bool agendado = agendamento.Agendar((int)comboBoxCliente.SelectedValue, idServico, dateTimePickerData.Value, idHorario);
+
+                                if (agendado)
+                                {
+                                    MessageBox.Show("Agendamento realizado com sucesso!");
+                                    AtualizarGridAgendamentos();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Falha ao agendar!");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Falha ao obter o ID do horário selecionado.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Por favor, selecione um cliente e um serviço válidos.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, preencha todos os campos corretamente.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Formato de horário inválido!");
+                }
             }
             else
             {
-                MessageBox.Show("Falha ao agendar!");
+                MessageBox.Show("Por favor, selecione um horário.");
             }
         }
 
 
         private void AtualizarGridAgendamentos()
         {
-             dataGridView1.DataSource = agendamento.ObterAgendamentos();
+            dataGridView1.DataSource = agendamento.ObterAgendamentos();
         }
 
+       
+    }
 
-
-      
-
-
-    }  
-    
 }
+
